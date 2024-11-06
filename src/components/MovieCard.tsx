@@ -1,20 +1,24 @@
+import { useState } from "react";
 import { MovieType } from "../types/movieTypes";
+type MovieCardProps={
+    movie:MovieType;
+};
 
-export const MovieCard=(props:MovieType)=>{
-    
-    const movieMock:MovieType={
-        id:1,
-        title:'Inception',
-    };
+export const MovieCard=({movie}:MovieCardProps)=>{
 
-    if(movieMock.title===''){
-        return <h1>*** Errore il movie è corrotto ***</h1>
+    const [clickCount, setClickCount]=useState(0);
+    const handleClick=(message:string)=>{
+        console.log(`cliccato ${message}`);
+        setClickCount(clickCount+1);
     }
 
+
     return(
-        <div>
-            <h1>{props.id}</h1>
-            <p>{ props.title }</p>
+        <div onClick={()=>handleClick(movie.title)}>
+            <h1>{movie.id}</h1>
+            <p>{movie.title}</p>
+            <p>{movie.description}</p>
+            <p> Cliccato {clickCount} volte</p>
         </div>
     );
 }
