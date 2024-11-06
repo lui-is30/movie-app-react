@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { MovieType } from "../types/movieTypes";
 type MovieCardProps={
@@ -14,11 +15,11 @@ export const MovieCard=({movie}:MovieCardProps)=>{
 
 
     return(
-        <div onClick={()=>handleClick(movie.title)}>
+        <div onClick={()=>(handleClick("movie.title"))}>
             <h1>{movie.id}</h1>
             <p>{movie.title}</p>
-            <p>{movie.description}</p>
-            <p> Cliccato {clickCount} volte</p>
+            <p>{movie.media_type}</p>
+            <p>cliccato {clickCount} volte</p>
         </div>
     );
 }
