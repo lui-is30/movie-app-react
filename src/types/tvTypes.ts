@@ -15,3 +15,8 @@ export type TvTypes={
     vote_count:number,
     origin_country:string[],
 }
+
+
+export type TvCardProps={
+    props:TvTypes;
+}

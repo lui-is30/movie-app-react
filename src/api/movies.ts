@@ -4,7 +4,7 @@
  */
 
 
-import { ResponseTrendingType } from "../types/responseTyper";
+
 import { OPTS } from "../modules/module";
 
 
@@ -13,7 +13,7 @@ import { OPTS } from "../modules/module";
 export const getMoviesTrending=async()=>{
     const response = await fetch("https://api.themoviedb.org/3/trending/movie/day?language=en-US", OPTS);
 
-    const data:ResponseTrendingType = await response.json();
+    const data = await response.json();
 
     console.log(data.results);
     return data.results;

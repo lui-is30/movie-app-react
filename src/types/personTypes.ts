@@ -12,3 +12,7 @@ export type PersonType={
     profile_path:string,
     known_for:MovieType[],
 }
+
+export type PersonCardProps={
+    props:PersonType;
+}

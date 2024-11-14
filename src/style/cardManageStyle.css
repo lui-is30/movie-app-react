@@ -1,0 +1,4 @@
+.movies,.series,.actors{
+    display: flex;
+    gap: 20px;
+}
