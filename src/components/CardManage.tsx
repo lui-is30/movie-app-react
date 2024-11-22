@@ -45,7 +45,7 @@ export const CardManage=()=>{
         <>
         <Box>
         <Text textAlign="center" textStyle="5xl">Trending Movie</Text>
-        <SimpleGrid columns={3} gap="10px" marginTop="5px" marginLeft="30px">
+        <SimpleGrid columns={3} gap="10px" mt="5px" ml="30px">
         {
             newMovie.map((movie)=>{
                 return <Card1 key={movie.id} props={movie}/>
@@ -57,7 +57,7 @@ export const CardManage=()=>{
 
         <Box>
         <Text textAlign="center" textStyle="5xl">Trending Series Tv</Text>
-        <SimpleGrid columns={3} gap="10px" marginTop="5px" marginLeft="30px">
+        <SimpleGrid columns={3} gap="10px" mt="5px" ml="30px">
         {
             newTv.map((tv)=>{
                 return <Card1 key={tv.id} props={tv}/>
@@ -69,7 +69,7 @@ export const CardManage=()=>{
 
         <Box>
         <Text textAlign="center" textStyle="5xl">Trending Actors</Text>
-        <SimpleGrid columns={3} gap="10px" marginTop="5px" marginLeft="30px">
+        <SimpleGrid columns={3} gap="10px" mt="5px" ml="30px">
         {
             newPerson.map((person)=>{
                 return <Card1 key={person.id} props={person}/>
