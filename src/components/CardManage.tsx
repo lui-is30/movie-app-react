@@ -5,9 +5,9 @@ import { PersonType } from "../types/personTypes"
 import { getMoviesTrending } from "../api/movies"
 import { getTrendingTv } from "../api/tv"
 import { getTrendingPeople } from "../api/person"
-import { Card } from "./Card"
+import { Card1 } from "./Card"
 import "../style/cardManageStyle.css"
-import { SimpleGrid } from "@chakra-ui/react"
+import { Box, SimpleGrid, Text } from "@chakra-ui/react"
 
 export const CardManage=()=>{
 
@@ -43,34 +43,40 @@ export const CardManage=()=>{
 
     return(
         <>
-        <h2>Trending Movie</h2>
-        <SimpleGrid columns={3} gap="40px">
+        <Box>
+        <Text textAlign="center" textStyle="5xl">Trending Movie</Text>
+        <SimpleGrid columns={3} gap="10px" marginTop="5px" marginLeft="30px">
         {
             newMovie.map((movie)=>{
-                return <Card key={movie.id} props={movie}/>
+                return <Card1 key={movie.id} props={movie}/>
             })
         }
     
         </SimpleGrid>
+        </Box>
 
-        <h2>Trending Series Tv</h2>
-       <div className="series">
+        <Box>
+        <Text textAlign="center" textStyle="5xl">Trending Series Tv</Text>
+        <SimpleGrid columns={3} gap="10px" marginTop="5px" marginLeft="30px">
         {
             newTv.map((tv)=>{
-                return <Card key={tv.id} props={tv}/>
+                return <Card1 key={tv.id} props={tv}/>
             })
         }
 
-        </div>
- 
-        <h2>Trending Actors</h2>
-        <div className="actors">
+        </SimpleGrid>
+        </Box>
+
+        <Box>
+        <Text textAlign="center" textStyle="5xl">Trending Actors</Text>
+        <SimpleGrid columns={3} gap="10px" marginTop="5px" marginLeft="30px">
         {
             newPerson.map((person)=>{
-                return <Card key={person.id} props={person}/>
+                return <Card1 key={person.id} props={person}/>
             })
         }
-        </div>
+        </SimpleGrid>
+        </Box>
         </>
     )
 }
