@@ -7,6 +7,7 @@ import { getTrendingTv } from "../api/tv"
 import { getTrendingPeople } from "../api/person"
 import { Card } from "./Card"
 import "../style/cardManageStyle.css"
+import { SimpleGrid } from "@chakra-ui/react"
 
 export const CardManage=()=>{
 
@@ -43,13 +44,14 @@ export const CardManage=()=>{
     return(
         <>
         <h2>Trending Movie</h2>
-        <div className="movies">
+        <SimpleGrid columns={3} gap="40px">
         {
             newMovie.map((movie)=>{
                 return <Card key={movie.id} props={movie}/>
             })
         }
-        </div>
+    
+        </SimpleGrid>
 
         <h2>Trending Series Tv</h2>
        <div className="series">
