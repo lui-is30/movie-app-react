@@ -7,10 +7,13 @@ import { getTrendingTv } from "../api/tv"
 import { getTrendingPeople } from "../api/person"
 import { Card1 } from "./Card"
 import "../style/cardManageStyle.css"
-import { Box, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, SimpleGrid, Text, useDisclosure } from "@chakra-ui/react"
+import { Button } from "./ui/button"
+import { MovieDetail } from "./MovieDetail"
 
 export const CardManage=()=>{
 
+    const {open,onOpen,onClose}=useDisclosure();
 
     const [movie,setMovie]=useState<MovieType[]>([]);
     const [tv,setTv]=useState<TvTypes[]>([]);
@@ -43,6 +46,8 @@ export const CardManage=()=>{
 
     return(
         <>
+        <Button variant={"outline"} onClick={onOpen}>Dettaglio</Button>
+
         <Box>
         <Text textAlign="center" textStyle="5xl">Trending Movie</Text>
         <SimpleGrid columns={3} gap="10px" mt="5px" ml="30px">
@@ -77,6 +82,8 @@ export const CardManage=()=>{
         }
         </SimpleGrid>
         </Box>
+
+        <MovieDetail isOpen={open} onClose={onClose} />
         </>
     )
 }
