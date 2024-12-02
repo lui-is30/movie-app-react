@@ -2,40 +2,15 @@ import { MovieCardProps } from "../types/movieTypes";
 import { PersonCardProps } from "../types/personTypes";
 import { TvCardProps } from "../types/tvTypes";
 import "../style/CardStyle.css";
-import {Box, Button, Card,Image,useDisclosure } from "@chakra-ui/react";
-import {DialogActionTrigger,DialogBody,DialogCloseTrigger,DialogContent,DialogFooter,DialogHeader,DialogRoot,DialogTitle,DialogTrigger,} from "@chakra-ui/react";
+import {Button, Card,Image,useDisclosure } from "@chakra-ui/react";
 import { MovieDetail } from "./MovieDetail";
-
-/*<DialogRoot size="full" motionPreset="slide-in-bottom">
-                <DialogTrigger asChild>
-                    <Button variant="outline" size="sm">Open Dialog</Button>
-                </DialogTrigger>
-              
-                <DialogContent bgSize="cover" zIndex="overlay" position="fixed" w="100%" h="100%" top="0" left="0" bg="gray">
-                    <DialogHeader>
-                        <DialogTitle>{titleProps}</DialogTitle>
-                    </DialogHeader>
-                    <DialogBody>
-                        {description}
-                    </DialogBody>
-                    <DialogFooter>
-                        <DialogActionTrigger asChild>
-                            <Button variant="outline">Cancel</Button>
-                        </DialogActionTrigger>
-                        <Button>Save</Button>
-                    </DialogFooter>
-                    <DialogCloseTrigger />
-                </DialogContent>
-
-            </DialogRoot> */
-
 
 
 export const Card1=({props}:MovieCardProps|PersonCardProps|TvCardProps)=>{
     let titleProps!:string;
     let pathProps!:string;
     let description!:string;
-    //<img src={`https://image.tmdb.org/t/p/w500${pathProps}`}/>
+    
     const {open,onOpen,onClose}=useDisclosure();
 
     switch(props.media_type){

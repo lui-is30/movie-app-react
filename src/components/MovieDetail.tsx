@@ -3,9 +3,7 @@ import { MovieDetailType, MovieType } from "../types/movieTypes";
 import { PersonDetailType, PersonType } from "../types/personTypes";
 import { TVDetailType, TvTypes } from "../types/tvTypes";
 import { DialogBody, DialogCloseTrigger, DialogContent, DialogFooter, DialogHeader, DialogRoot, DialogTitle } from "./ui/dialog";
-import { getMoviesDetails } from "../api/movies";
-import { getTvDetail } from "../api/tv";
-import { getPersonDetail } from "../api/person";
+import { getMoviesDetails,getTvDetail,getPersonDetail } from "../api/getDetails";
 
 type MovieDetailProps={
     isOpen:boolean;

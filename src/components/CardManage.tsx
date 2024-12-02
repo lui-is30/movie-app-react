@@ -2,14 +2,10 @@ import { useEffect, useState } from "react"
 import { MovieType } from "../types/movieTypes"
 import { TvTypes } from "../types/tvTypes"
 import { PersonType } from "../types/personTypes"
-import { getMoviesTrending } from "../api/movies"
-import { getTrendingTv } from "../api/tv"
-import { getTrendingPeople } from "../api/person"
+import { getTrendingMovie,getTrendingTv,getTrendingPeople } from "../api/getTrending"
 import { Card1 } from "./Card"
 import "../style/cardManageStyle.css"
-import { Box, SimpleGrid, Text, useDisclosure } from "@chakra-ui/react"
-import { Button } from "./ui/button"
-import { MovieDetail } from "./MovieDetail"
+import { Box, SimpleGrid, Text } from "@chakra-ui/react"
 
 export const CardManage=()=>{
 
@@ -21,18 +17,15 @@ export const CardManage=()=>{
 
     useEffect(()=>{
         const fetchMovie=async()=>{
-            const movies= await getMoviesTrending();
-            setMovie(movies);
+            setMovie(await getTrendingMovie());
         }
 
         const fetchTv=async()=>{
-            const tv= await getTrendingTv();
-            setTv(tv);
+            setTv(await getTrendingTv());
         }
 
         const fetchPerson=async()=>{
-            const person= await getTrendingPeople();
-            setPerson(person);
+            setPerson(await getTrendingPeople());
         }
 
         fetchMovie();
